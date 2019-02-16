@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npm i &>/dev/null",
-    "test:local": "tsc && ./node_modules/.bin/wdio wdio.conf.js && node ./node_modules/rimraf/bin.js src",
+    "test": "tsc && ./node_modules/.bin/wdio wdio.conf.js && node ./node_modules/rimraf/bin.js src",
     "generate": "allure generate ../allure-results --clean",
     "report": "allure generate allure-results --clean && allure open",
     "wdio": "wdio"
