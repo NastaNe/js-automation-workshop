@@ -1,9 +1,9 @@
 exports.config = {
 
-    host: "hub",
+    host: "localhost",
     port: 4444,
     specs: [
-        './test/*'
+        './src/test/*'
     ],
     exclude: [],
     maxInstances: 10,
@@ -25,21 +25,17 @@ exports.config = {
     bail: 0,
     screenshotPath: './errorShots/',
     baseUrl: 'https://bigl.ua/',
-    waitforTimeout: 100000,
+    waitforTimeout: 10000,
     connectionRetryTimeout: 100000,
     connectionRetryCount: 3,
     framework: 'mocha',
+    services: ['selenium-standalone'],
 
     reporters: [
         'spec',
-        'mochawesome',
         'allure'
     ],
     reporterOptions: {
-        mochawesome: {
-            outputDir: './mochaawesome', //mochajs json file will be written to this directory
-            //mochawesome_filename: 'myfile.json' //will default to wdiomochawesome.json if no name is provided
-        },
         // http://webdriver.io/guide/reporters/allure.html
         allure: {
             outputDir: './allure-results'
